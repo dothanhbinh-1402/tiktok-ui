@@ -4,6 +4,7 @@ import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { BiLoaderCircle } from 'react-icons/bi';
 import Tippy from '@tippyjs/react/headless';
 /**/
+import Button from '~/components/Button';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
@@ -57,7 +58,10 @@ function Header() {
                         </button>
                     </div>
                 </Tippy>
-                <div className={cx('actions')}></div>
+                <div className={cx('actions')}>
+                    <Button text>Upload</Button>
+                    <Button primary>Log in</Button>
+                </div>
             </div>
         </header>
     );
