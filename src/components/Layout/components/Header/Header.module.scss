@@ -82,4 +82,14 @@
     }
 }
 .actions {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.more-btn {
+    font-size: 4rem;
+    margin-left: 10px;
+    margin-bottom: -10px;
+    background-color: transparent;
+    padding: 4px 8px;
 }

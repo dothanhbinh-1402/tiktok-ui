@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
-import { AiOutlineCloseCircle } from 'react-icons/ai';
+import {
+    AiOutlineCloseCircle,
+    AiOutlineMore,
+    AiOutlineQuestionCircle,
+} from 'react-icons/ai';
 import { BiLoaderCircle } from 'react-icons/bi';
+import { FaLanguage, FaRegKeyboard } from 'react-icons/fa';
 import Tippy from '@tippyjs/react/headless';
 /**/
 import Button from '~/components/Button';
@@ -10,8 +15,19 @@ import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
+import Menu from '~/components/Popper/Menu';
 
 const cx = classNames.bind(styles);
+const MENU_ITEMS = [
+    { icon: <FaLanguage />, title: 'English' },
+    {
+        icon: <AiOutlineQuestionCircle />,
+        title: 'Feedback and help',
+        to: '/feedback',
+    },
+    { icon: <FaRegKeyboard />, title: 'Keyboard shortcuts' },
+];
+
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
     useEffect(() => {
@@ -61,6 +77,11 @@ function Header() {
                 <div className={cx('actions')}>
                     <Button text>Upload</Button>
                     <Button primary>Log in</Button>
+                    <Menu items={MENU_ITEMS}>
+                        <button className={cx('more-btn')}>
+                            <AiOutlineMore />
+                        </button>
+                    </Menu>
                 </div>
             </div>
         </header>
