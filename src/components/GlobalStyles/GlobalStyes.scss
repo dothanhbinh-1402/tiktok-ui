@@ -35,3 +35,17 @@ a[href] {
     color: var(--text-color);
     text-decoration: none;
 }
+
+//custom tippy
+body {
+    .tippy-box {
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        border-color: rgba(84, 84, 84, 0.92);
+    }
+    .tippy-content {
+        padding: 8px 9px;
+    }
+}
