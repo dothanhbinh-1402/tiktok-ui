@@ -9,7 +9,6 @@ import {
 import { RiAccountCircleLine } from 'react-icons/ri';
 import { BiLoaderCircle, BiLogOut } from 'react-icons/bi';
 import { FaLanguage, FaRegKeyboard } from 'react-icons/fa';
-import { BsFillCloudArrowUpFill } from 'react-icons/bs';
 import Tippy from '@tippyjs/react';
 import HeadlessTippy from '@tippyjs/react/headless';
 /**/
@@ -21,6 +20,8 @@ import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
 import 'tippy.js/dist/tippy.css';
+import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -135,9 +136,31 @@ function Header() {
                     {currentUser ? (
                         // <div className={cx('current-user')}></div>
                         <>
-                            <Tippy content="Upload video">
+                            <Tippy
+                                delay={[0, 50]}
+                                content="Upload video"
+                                placement="bottom"
+                            >
                                 <button className={cx('action-btn')}>
-                                    <BsFillCloudArrowUpFill />
+                                    <UploadIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy
+                                delay={[0, 50]}
+                                content="Message"
+                                placement="bottom"
+                            >
+                                <button className={cx('action-btn')}>
+                                    <MessageIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy
+                                delay={[0, 50]}
+                                content="Inbox"
+                                placement="bottom"
+                            >
+                                <button className={cx('action-btn')}>
+                                    <InboxIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -152,11 +175,11 @@ function Header() {
                         onChange={handleMenuChange}
                     >
                         {currentUser ? (
-                            <img
+                            <Image
                                 src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/f5339442d21587197502e66de80c101a.jpeg?x-expires=1699225200&x-signature=bx8%2BmO7%2FZJk1iIiUKF8DkhmbLgc%3D"
                                 className={cx('user-avatar')}
                                 alt="Nguyen Van A"
-                            ></img>
+                            ></Image>
                         ) : (
                             <button className={cx('more-btn')}>
                                 <AiOutlineMore />
