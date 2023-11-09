@@ -2,9 +2,13 @@
     --search-boder-radious: 92px;
     --search-height: 46px;
 
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: var(--default-layout-header-height, 60px);
     box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+    background-color: var(--white);
     display: flex;
     justify-content: center;
 }
@@ -16,7 +20,9 @@
     align-items: center;
     justify-content: space-between;
 }
-
+.logo-link {
+    display: flex;
+}
 .actions {
     display: inline-flex;
     align-items: center;
